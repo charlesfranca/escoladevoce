@@ -144,3 +144,61 @@ escoladevoce.console = {
         console.log(message);
     }
 }
+
+escoladevoce.uploadPhoto = function(inputFile) {
+    escoladevoce.ui.block("Estamos atualizando seu cadastro tá. Aguenta só um pouquinho que jaja termina :).");
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) {
+        $.ajax({
+            url: "/account/ProfilePhotoUpload",
+            type: "post",
+            data: {
+                image: fileLoadedEvent.target.result
+            },
+            success: function(data) {
+                if (data.success) {
+                    location.reload();
+                }
+                console.log(data);
+            },
+            error: function(err) {
+                console.log(err);
+            },
+            complete: function() {
+                escoladevoce.ui.unblock();
+            }
+        });
+    };
+
+    var file = inputFile.files[0];
+    fileReader.readAsDataURL(file);
+}
+
+escoladevoce.uploadCover = function(inputFile) {
+    escoladevoce.ui.block("Estamos atualizando seu cadastro tá. Aguenta só um pouquinho que jaja termina :).");
+    var fileReader = new FileReader();
+    fileReader.onload = function(fileLoadedEvent) {
+        $.ajax({
+            url: "/account/CoverPhotoUpload",
+            type: "post",
+            data: {
+                image: fileLoadedEvent.target.result
+            },
+            success: function(data) {
+                if (data.success) {
+                    location.reload();
+                }
+                console.log(data);
+            },
+            error: function(err) {
+                console.log(err);
+            },
+            complete: function() {
+                escoladevoce.ui.unblock();
+            }
+        })
+    };
+
+    var file = inputFile.files[0];
+    fileReader.readAsDataURL(file);
+}

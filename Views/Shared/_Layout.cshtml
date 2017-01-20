@@ -8,19 +8,20 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     
     <environment names="Development">
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/lib/slick-carousel/slick/slick.css" />
         <link rel="stylesheet" href="~/lib/slick-carousel/slick/slick-theme.css" />
         <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css" />
+        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
     </environment>
     <environment names="Staging,Production">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
+        
         <link rel="stylesheet" href="~/lib/slick-carousel/slick/slick.css" />
         <link rel="stylesheet" href="~/lib/slick-carousel/slick/slick-theme.css" />
         <link rel="stylesheet" href="~/lib/jquery-ui/jquery-ui.min.css" />
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
+              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
+              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
         <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
     </environment>
     <link rel="stylesheet" href="~/css/icons.css" asp-append-version="true" />
@@ -29,6 +30,18 @@
 <!--logged-->
 <body class="@(User.Identity.IsAuthenticated ? "logged" : "")">
     
+@RenderSection("modalContent", required: false)
+
+<!--<div id="dialog-message" title="Download complete">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Your files have downloaded successfully into the My Downloads folder.
+  </p>
+  <p>
+    Currently using <b>36% of your storage space</b>.
+  </p>
+</div>-->
+
     <nav class="navbar navbar-default navbar-fixed-top" id="menu1">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -118,6 +131,7 @@
         <script src="~/js/parallax.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery-ui/jquery-ui.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+        <script src='https://rawgit.com/RickStrahl/jquery-resizable/master/src/jquery-resizable.js'></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
 
     <!--<environment names="Development">
@@ -146,6 +160,17 @@
     </environment>-->
 
     <script>
+      /*  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );*/
+
         escoladevoce.facebook.init();
         escoladevoce.auth.init();
 

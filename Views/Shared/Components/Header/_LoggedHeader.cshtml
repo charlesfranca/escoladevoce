@@ -6,16 +6,25 @@
     string name = names[0];
     string lastname = names[names.Count() - 1];
 
-    var embaixadora = false;
+    var cover = "/images/header.jpg";
+    var profilePhoto = "/images/no-image.png";
+    if(!string.IsNullOrEmpty(Model.cover)) {
+        cover = "/images/" + Model.cover;
+    }
+
+    if(!string.IsNullOrEmpty(Model.image)) {
+        profilePhoto = "/images/" + Model.image;
+    }
 }
 
-<section class="animated parallax-window" id="bannerSection" data-parallax="scroll" data-image-src="/images/header.jpg">
+<section class="animated parallax-window" id="bannerSection" data-parallax="scroll" data-image-src="@cover">
 	<div class="container">
 		<div class="row parallax-content">
             <div class="col-md-6">
                 <div id="profile-photos">
                     <div class="profile-photo circled-div">
-                        <img src="~/images/no-image.png" />
+                        <img src="@profilePhoto" />
+                        <input type="file" onchange="escoladevoce.uploadPhoto(this)">
                     </div>
                     <div class="embaixadora-photo circled-div">
                         <img src="~/images/no-embaixadora.png" />
@@ -25,8 +34,8 @@
                 <div class="profile-info">
                     <div class="profile-name">@fullname</div>
                     <div class="profile-options">
-                        <a href="#"><label> <span class="icon icon-message"><img src="~/images/icons/message-white.png"/></span> <span class="profile-option-title">Mensagens</span></label></a>
-                        <a asp-controller="Account" asp-action="Logout"><label> <span class="icon icon-logout"><img src="~/images/icons/logout-white.png"/></span> <span class="profile-option-title">Sair</span></label></a>
+                        <a href="/mensagens"><label> <span class="icon icon-message"><img src="~/images/icons/message-white.png"/></span> <span class="profile-option-title">Mensagens</span></label></a>
+                        <a href="/Account/Logout"><label> <span class="icon icon-logout"><img src="~/images/icons/logout-white.png"/></span> <span class="profile-option-title">Sair</span></label></a>
                     </div>
                     <div class="embaixadora-info">
                         <p>
@@ -42,11 +51,13 @@
                 
                 <div class="profile-right-info">
                     <a><img src="~/images/icons/camera-white.png"/> Alterar Capa</a>
+                    <input type="file" onchange="escoladevoce.uploadCover(this)" />
                 </div>
-
+                
             </div>
         </div>
 	</div>
 </section><!-- /bannerSection -->
 
 @Html.Partial("_BuscarEmbaixadora")
+@Html.Partial("_BuscandoEmbaixadora")

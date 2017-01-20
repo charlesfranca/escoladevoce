@@ -1003,10 +1003,12 @@ section#search-embaixadoras {
 
 .profile-photo img {
     width: 100%;
+    height: 100%;
 }
 
 .embaixadora-photo img {
     width: 100%;
+    height: 100%;
 }
 
 .embaixadora-info a {
@@ -1021,4 +1023,98 @@ section#search-embaixadoras {
 .modal-body h2.sub-title {
     margin-top: 0;
     margin-bottom: 27px;
+}
+
+input[type=file] {
+    display: block;
+    position: absolute;
+    /* visibility: hidden; */
+    /* z-index: 1000; */
+    cursor: pointer;
+}
+
+.profile-photo input[type=file] {
+    width: 100%;
+    height: 130%;
+    top: -21px;
+    border-radius: 50%;
+}
+
+.profile-right-info input[type=file] {
+    width: 200%;
+    height: 200%;
+    top: -20px;
+    left: -90px;
+}
+
+.profile-right-info {
+    overflow: hidden;
+}
+
+section#papo-de-escolete {
+    background: #F7F7F7;
+}
+
+.papo-item {
+    background: #fff;
+    border-radius: 5px;
+    padding: 32px 18px 27px 38px;
+    margin-bottom: 46px;
+}
+
+.papo-item-left {
+    border-right: 1px solid #000;
+    padding-right: 27px;
+    margin-right: 37px;
+}
+
+.papo-item-right {
+    width: 84%;
+}
+
+.papo-item-right .texto {
+    max-width: 725px;
+}
+
+.papo-item-right h2.sub-title {
+    margin-top: 0;
+}
+
+.papo-item>div {
+    display: inline-block;
+    vertical-align: top;
+    min-height: 145px;
+    padding-top: 10px;
+}
+
+.qtd-comments {
+    font-size: 16px;
+    border-bottom: 2px solid #FF9376;
+    display: inline-block;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+    font-family: "asap";
+    padding-right: 3px;
+}
+
+.mensagem>div {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.panel-left {
+    text-align: center;
+}
+
+.mensagem-right-container {
+    padding-top: 10px;
+    margin-left: 25px;
+}
+
+.mensagem.active {
+    background: #FF686A;
+}
+
+.mensagem {
+    padding: 12px 0;
 }
