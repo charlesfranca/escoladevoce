@@ -30,6 +30,18 @@
 <!--logged-->
 <body class="@(User.Identity.IsAuthenticated ? "logged" : "")">
     
+@RenderSection("modalContent", required: false)
+
+<!--<div id="dialog-message" title="Download complete">
+  <p>
+    <span class="ui-icon ui-icon-circle-check" style="float:left; margin:0 7px 50px 0;"></span>
+    Your files have downloaded successfully into the My Downloads folder.
+  </p>
+  <p>
+    Currently using <b>36% of your storage space</b>.
+  </p>
+</div>-->
+
     <nav class="navbar navbar-default navbar-fixed-top" id="menu1">
         <div class="container">
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -148,6 +160,17 @@
     </environment>-->
 
     <script>
+      /*  $( function() {
+    $( "#dialog-message" ).dialog({
+      modal: true,
+      buttons: {
+        Ok: function() {
+          $( this ).dialog( "close" );
+        }
+      }
+    });
+  } );*/
+
         escoladevoce.facebook.init();
         escoladevoce.auth.init();
 
