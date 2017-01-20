@@ -1128,4 +1128,16 @@ button.escola-btn.right-button {
 
 .embaixadora-box-cep {
     position: relative;
+    margin-bottom: 30px;
+}
+
+.embaixadora-content .prev-arrow.slick-arrow,
+.embaixadora-content .next-arrow.slick-arrow {
+    top: 80px !important;
+}
+
+.course-hate span {
+    margin-right: 5px;
+    margin-bottom: 15px;
+    margin-top: 10px;
 }

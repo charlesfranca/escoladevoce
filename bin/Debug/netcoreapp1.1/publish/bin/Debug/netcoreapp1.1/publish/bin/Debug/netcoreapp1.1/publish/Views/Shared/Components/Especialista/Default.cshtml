@@ -34,7 +34,11 @@
         <br/>
         
         <p class="text-right">
-            <a class="escola-btn">CONHEÇA NOSSAS EMBAIXADORAS</a>
+            @if(User.Identity.IsAuthenticated){
+                <a class="escola-btn" href="/embaixadoras">CONHEÇA NOSSAS EMBAIXADORAS</a>
+            }else{
+                <a class="escola-btn" onclick="escoladevoce.auth.openSignupForm()">CONHEÇA NOSSAS EMBAIXADORAS</a>
+            }
         </p>
     </div><!-- /embaixadora-content -->
 </section><!-- /embaixadoras -->
