@@ -34,8 +34,8 @@
                 <div class="profile-info">
                     <div class="profile-name">@fullname</div>
                     <div class="profile-options">
-                        <a href="#"><label> <span class="icon icon-message"><img src="~/images/icons/message-white.png"/></span> <span class="profile-option-title">Mensagens</span></label></a>
-                        <a asp-controller="Account" asp-action="Logout"><label> <span class="icon icon-logout"><img src="~/images/icons/logout-white.png"/></span> <span class="profile-option-title">Sair</span></label></a>
+                        <a href="/mensagens"><label> <span class="icon icon-message"><img src="~/images/icons/message-white.png"/></span> <span class="profile-option-title">Mensagens</span></label></a>
+                        <a href="/Account/Logout"><label> <span class="icon icon-logout"><img src="~/images/icons/logout-white.png"/></span> <span class="profile-option-title">Sair</span></label></a>
                     </div>
                     <div class="embaixadora-info">
                         <p>
@@ -60,3 +60,4 @@
 </section><!-- /bannerSection -->
 
 @Html.Partial("_BuscarEmbaixadora")
+@Html.Partial("_BuscandoEmbaixadora")

@@ -10,7 +10,9 @@
     </script> 
 }
 
-@Html.Partial("_BemVinda")
+@section modalContent {
+    @Html.Partial("_BemVinda") 
+}
 
 @await Component.InvokeAsync("Header")
 

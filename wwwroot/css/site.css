@@ -1053,6 +1053,7 @@ input[type=file] {
 
 section#papo-de-escolete {
     background: #F7F7F7;
+    padding: 31px 0;
 }
 
 .papo-item {
@@ -1069,7 +1070,7 @@ section#papo-de-escolete {
 }
 
 .papo-item-right {
-    width: 84%;
+    width: 80%;
 }
 
 .papo-item-right .texto {
@@ -1117,4 +1118,14 @@ section#papo-de-escolete {
 
 .mensagem {
     padding: 12px 0;
+}
+
+button.escola-btn.right-button {
+    position: absolute;
+    top: 11px;
+    right: 39px;
+}
+
+.embaixadora-box-cep {
+    position: relative;
 }
