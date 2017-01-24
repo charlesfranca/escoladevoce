@@ -15,6 +15,9 @@
     if(!string.IsNullOrEmpty(Model.image)) {
         profilePhoto = "/images/" + Model.image;
     }
+
+    ViewBag.name = name;
+    ViewBag.fullname = fullname;
 }
 
 <section class="animated parallax-window" id="bannerSection" data-parallax="scroll" data-image-src="@cover">

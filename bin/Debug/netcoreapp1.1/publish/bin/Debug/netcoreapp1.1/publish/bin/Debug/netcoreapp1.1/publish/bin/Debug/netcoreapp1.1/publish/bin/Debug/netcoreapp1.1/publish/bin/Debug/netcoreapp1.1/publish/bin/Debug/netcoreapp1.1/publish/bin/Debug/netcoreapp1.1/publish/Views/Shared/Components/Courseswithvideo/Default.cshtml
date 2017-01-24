@@ -54,7 +54,11 @@
         <br/>
         
         <p class="text-right">
-            <a class="escola-btn">veja mais cursos</a>
+            @if(User.Identity.IsAuthenticated){
+                <a class="escola-btn" href="/cursos">veja mais cursos</a>
+            }else{
+                <a class="escola-btn" onclick="escoladevoce.auth.openSignupForm()">veja mais cursos</a>
+            }
         </p>
     </div><!-- /course-content -->
 
