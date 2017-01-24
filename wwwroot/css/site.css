@@ -1141,3 +1141,170 @@ section#papo-de-escolete {
     margin-bottom: 15px;
     margin-top: 10px;
 }
+
+.page-container {
+    margin: 20px;
+}
+
+
+/* horizontal panel*/
+
+.panel-container {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid silver;
+    overflow: hidden;
+    /* avoid browser level touch actions */
+    xtouch-action: none;
+}
+
+.panel-left {
+    flex: 0 0 auto;
+    /* only manually resize */
+    padding: 10px;
+    width: 430px;
+    min-height: 200px;
+    min-width: 150px;
+    white-space: nowrap;
+    background: #F7F7F7;
+    color: white;
+}
+
+.splitter {
+    flex: 0 0 auto;
+    width: 18px;
+    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+    min-height: 200px;
+    cursor: col-resize;
+}
+
+.panel-right {
+    flex: 1 1 auto;
+    /* resizable */
+    width: 100%;
+    min-height: 200px;
+    min-width: 200px;
+    background: #eee;
+}
+
+
+/* vertical panel */
+
+.panel-container-vertical {
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    border: 1px solid silver;
+    overflow: hidden;
+}
+
+.panel-top {
+    flex: 0 0 auto;
+    /* only manually resize */
+    padding: 10px;
+    height: 150px;
+    width: 100%;
+    white-space: nowrap;
+    background: #838383;
+    color: white;
+}
+
+.splitter-horizontal {
+    flex: 0 0 auto;
+    height: 18px;
+    background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
+    cursor: row-resize;
+}
+
+.panel-bottom {
+    flex: 1 1 auto;
+    /* resizable */
+    padding: 10px;
+    min-height: 200px;
+    background: #eee;
+}
+
+.messages-panel {
+    height: 718px;
+}
+
+.messages {
+    height: calc(100% - 233px);
+    overflow-y: scroll;
+}
+
+.messages .message .message-photo img {
+    width: 40px;
+}
+
+.messages .message .message-content {
+    padding: 20px;
+}
+
+.message-content {
+    margin-bottom: 40px;
+    width: 42%;
+}
+
+.messages .message.left-message .message-content {
+    background: white;
+}
+
+.messages .message.right-message .message-content {
+    background: #ff686a;
+    color: white;
+}
+
+.messages .message.left-message .message-photo,
+.messages .message.left-message .message-content {
+    float: left;
+}
+
+.messages .message.right-message .message-photo,
+.messages .message.right-message .message-content {
+    float: right;
+}
+
+.messages .message.left-message .message-photo {
+    margin: 0 20px;
+}
+
+.messages .message.right-message .message-photo {
+    margin: 0 20px;
+}
+
+.message-person {
+    background: white;
+    padding: 20px;
+    margin-bottom: 30px;
+    width: 100%;
+    font-size: 20px;
+}
+
+.mce-widget.mce-btn {
+    border: none;
+}
+
+.mce-widget.mce-btn button {
+    background: white;
+    border: none;
+}
+
+.mce-container-body.mce-flow-layout {
+    border: none;
+    background: white;
+}
+
+.mce-tinymce.mce-container.mce-panel,
+.mce-edit-area.mce-container.mce-panel.mce-stack-layout-item {
+    border: none !important;
+}
+
+.mce-statusbar.mce-container.mce-panel.mce-stack-layout-item.mce-last {
+    display: none;
+}
+
+.splitter {
+    width: 2px;
+    background: #C9CBC9;
+}

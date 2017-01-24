@@ -14,98 +14,36 @@
     </div>
 </section>
 
-<style>
-
-.page-container {
-  margin: 20px;
-}
-
-
-/* horizontal panel*/
-
-.panel-container {
-  display: flex;
-  flex-direction: row;
-  border: 1px solid silver;
-  overflow: hidden;
-  
-  /* avoid browser level touch actions */
-  xtouch-action: none;
-}
-
-.panel-left {
-  flex: 0 0 auto;
-  /* only manually resize */
-  padding: 10px;
-  width: 430px;
-  min-height: 200px;
-  min-width: 150px;
-  white-space: nowrap;
-  background: #F7F7F7;
-  color: white;
-}
-
-.splitter {
-  flex: 0 0 auto;
-  width: 18px;  
-  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
-  min-height: 200px;
-  cursor: col-resize;  
-}
-
-.panel-right {
-  flex: 1 1 auto;
-  /* resizable */
-  padding: 10px;
-  width: 100%;
-  min-height: 200px;
-  min-width: 200px;
-  background: #eee;
-}
-
-
-/* vertical panel */
-
-.panel-container-vertical {
-  display: flex;
-  flex-direction: column;
-  height: 500px;
-  border: 1px solid silver;
-  overflow: hidden;
-}
-
-.panel-top {
-  flex: 0 0 auto;
-  /* only manually resize */
-  padding: 10px;
-  height: 150px;
-  width: 100%;
-  white-space: nowrap;
-  background: #838383;
-  color: white;
-}
-
-.splitter-horizontal {
-  flex: 0 0 auto;
-  height: 18px;
-  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
-  cursor: row-resize;
-}
-
-.panel-bottom {
-  flex: 1 1 auto;
-  /* resizable */
-  padding: 10px;
-  min-height: 200px;
-  background: #eee;
-}
-</style>
-
 @section scripts{
     <script>
-         $(".panel-left").resizable({
-            handleSelector: ".splitter",
-            resizeHeight: false
+         $(document).load(function(){
+             $(".panel-left").resizable({
+                handleSelector: ".splitter",
+                resizeHeight: false
+            });
+         });
+         
+         tinymce.init({
+            selector: '#newMessage',
+            menubar: false,
+            plugins: [
+                'emoticons'
+            ],
+            toolbar: [
+                'bold italic underline emoticons'
+            ],
+            mentions_fetch: function (query, success) {
+                // Fake a server call by using a setTimeout
+                alert("searching");
+                setTimeout(function() {
+                console.log('Search query:', query.term);
+
+                success([
+                    {id: 'johndoe', name: 'johndoe', fullName: 'John Doe'},
+                    {id: 'janedoe', name: 'janedoe', fullName: 'Jane Doe'}
+                ]);
+                }, 0);
+            }
         });
     </script>
 }
@@ -177,7 +115,103 @@
         </div>
 
         <div class="panel-right">
-            right panel
+            <div class="messages-panel">
+                <div class="message-person">
+                    Raquel Vieira
+                </div>
+
+                <div class="messages">
+
+                    <div class="message left-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Olá Amiga. 
+                        </div>
+                    </div>  
+                    
+                    <div class="clearfix"></div>
+                    
+                    <div class="message left-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Como vão as coisas?
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+                    <div class="message right-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Oiiiii!!!
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+
+                    <div class="message right-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Eu vou muito bem e você?
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+
+                    <div class="message left-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Vou bem também. Queria te fazer uma pergunta. Posso?
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+
+                    <div class="message right-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Claro que pode.
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+                    <div class="message right-message">
+                        <div class="message-photo">
+                            <img src="~/images/phot-papo.png" alt="">
+                        </div>
+                        <div class="message-content">
+                            Como posso te ajudar?
+                        </div>
+                    </div>  
+
+                    <div class="clearfix"></div>
+
+                </div>
+
+                <div class="new-message-form">
+                    <form>
+                        <textarea name="newMessage" id="newMessage"></textarea>
+                        <div id="mytoolbar"></div>
+                    </form>
+                </div>
+
+            </div>
         </div>
     </div>
 </section>
