@@ -1,0 +1,144 @@
+@{
+    ViewData["Title"] = "Embaixadoras";
+}
+
+@await Component.InvokeAsync("Header")
+
+<section id="menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Partial("_NavLogged")
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Component.InvokeAsync("Embaixadoras")
+
+<br>
+<br>
+<br>
+<br>
+
+<section id="search-embaixadoras">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <h2 class="sub-title">Nossas Embaixadoras</h2>
+            </div><!-- /.col-lg-6 -->
+
+            <div class="col-lg-6">
+                <div class="input-group">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </span>
+                <input type="text" class="form-control" placeholder="Search for...">
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+
+        </div><!-- /.row -->
+
+<br>
+<br>
+<br>
+        <div class="embaixadoras">
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="embaixadoras">
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+
+                <div class="search-embaixadora-item">
+                    <div class="photo">
+                        <div class="image">
+                            <img src="~/images/embaixadora.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="info">
+                        <h2>Raquel Vieira</h2>
+                        <p>São Paulo/SP</p>
+                        <p><a href=""><span class="icon icons-mail"></span> Enviar Mensagem</a></p>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+
+
+
+    
+
+</section>

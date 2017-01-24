@@ -1,0 +1,183 @@
+@{
+    ViewData["Title"] = "Embaixadoras";
+}
+
+@await Component.InvokeAsync("Header")
+
+<section id="menu">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @Html.Partial("_NavLogged")
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+
+.page-container {
+  margin: 20px;
+}
+
+
+/* horizontal panel*/
+
+.panel-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid silver;
+  overflow: hidden;
+  
+  /* avoid browser level touch actions */
+  xtouch-action: none;
+}
+
+.panel-left {
+  flex: 0 0 auto;
+  /* only manually resize */
+  padding: 10px;
+  width: 430px;
+  min-height: 200px;
+  min-width: 150px;
+  white-space: nowrap;
+  background: #F7F7F7;
+  color: white;
+}
+
+.splitter {
+  flex: 0 0 auto;
+  width: 18px;  
+  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/vsizegrip.png) center center no-repeat #535353;
+  min-height: 200px;
+  cursor: col-resize;  
+}
+
+.panel-right {
+  flex: 1 1 auto;
+  /* resizable */
+  padding: 10px;
+  width: 100%;
+  min-height: 200px;
+  min-width: 200px;
+  background: #eee;
+}
+
+
+/* vertical panel */
+
+.panel-container-vertical {
+  display: flex;
+  flex-direction: column;
+  height: 500px;
+  border: 1px solid silver;
+  overflow: hidden;
+}
+
+.panel-top {
+  flex: 0 0 auto;
+  /* only manually resize */
+  padding: 10px;
+  height: 150px;
+  width: 100%;
+  white-space: nowrap;
+  background: #838383;
+  color: white;
+}
+
+.splitter-horizontal {
+  flex: 0 0 auto;
+  height: 18px;
+  background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;
+  cursor: row-resize;
+}
+
+.panel-bottom {
+  flex: 1 1 auto;
+  /* resizable */
+  padding: 10px;
+  min-height: 200px;
+  background: #eee;
+}
+</style>
+
+@section scripts{
+    <script>
+         $(".panel-left").resizable({
+            handleSelector: ".splitter",
+            resizeHeight: false
+        });
+    </script>
+}
+
+<section id="mensagens">
+    <div class="panel-container">
+
+        <div class="panel-left">
+            
+            <div class="mensagem active">
+
+                <div class="mensagem-left-content">
+                    <img src="~/images/phot-papo.png" alt="">
+                </div>
+                <div class="mensagem-right-container">
+                    <p>
+                        Raquel Vieira<br>
+                        São Paulo/SP
+                    </p>
+                </div>
+
+            </div>
+
+        <div class="mensagem">
+
+                <div class="mensagem-left-content">
+                    <img src="~/images/phot-papo.png" alt="">
+                </div>
+                <div class="mensagem-right-container">
+                    <p>
+                        Raquel Vieira<br>
+                        São Paulo/SP
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mensagem">
+
+                <div class="mensagem-left-content">
+                    <img src="~/images/phot-papo.png" alt="">
+                </div>
+                <div class="mensagem-right-container">
+                    <p>
+                        Raquel Vieira<br>
+                        São Paulo/SP
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="mensagem">
+
+                <div class="mensagem-left-content">
+                    <img src="~/images/phot-papo.png" alt="">
+                </div>
+                <div class="mensagem-right-container">
+                    <p>
+                        Raquel Vieira<br>
+                        São Paulo/SP
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="splitter">
+        </div>
+
+        <div class="panel-right">
+            right panel
+        </div>
+    </div>
+</section>
